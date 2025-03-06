@@ -28,6 +28,34 @@ h1 {
     color: #444;
 }
 
+.scoreboard {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.score span:first-child {
+    font-weight: bold;
+    color: #444;
+}
+
+.score span:last-child {
+    font-size: 1.5em;
+    color: #4CAF50;
+}
+
 .game-board {
     display: grid;
     grid-template-columns: repeat(3, 100px);

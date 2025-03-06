@@ -6,6 +6,10 @@ class TicTacToe {
         this.cells = document.querySelectorAll('.cell');
         this.statusDisplay = document.getElementById('status');
         this.restartButton = document.getElementById('restart');
+        this.playerScore = 0;
+        this.botScore = 0;
+        this.playerScoreDisplay = document.getElementById('player-score');
+        this.botScoreDisplay = document.getElementById('bot-score');
         
         this.initializeGame();
     }
@@ -45,6 +49,13 @@ class TicTacToe {
         if (this.checkWin()) {
             this.gameActive = false;
             this.statusDisplay.textContent = `${this.currentPlayer} wins!`;
+            if (this.currentPlayer === 'X') {
+                this.playerScore++;
+                this.playerScoreDisplay.textContent = this.playerScore;
+            } else {
+                this.botScore++;
+                this.botScoreDisplay.textContent = this.botScore;
+            }
             return;
         }
 
