@@ -8,8 +8,10 @@ class TicTacToe {
         this.restartButton = document.getElementById('restart');
         this.playerScore = 0;
         this.botScore = 0;
+        this.drawScore = 0;
         this.playerScoreDisplay = document.getElementById('player-score');
         this.botScoreDisplay = document.getElementById('bot-score');
+        this.drawScoreDisplay = document.getElementById('draw-score');
         
         this.initializeGame();
     }
@@ -62,6 +64,8 @@ class TicTacToe {
         if (this.checkDraw()) {
             this.gameActive = false;
             this.statusDisplay.textContent = "It's a draw!";
+            this.drawScore++;
+            this.drawScoreDisplay.textContent = this.drawScore;
             return;
         }
 
